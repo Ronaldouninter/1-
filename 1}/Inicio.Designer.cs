@@ -28,23 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.DgvData = new System.Windows.Forms.DataGridView();
+            this.dgvNombres = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.BtnAgregar = new System.Windows.Forms.Button();
-            this.BtnOrdenar = new System.Windows.Forms.Button();
             this.BtnMostrar = new System.Windows.Forms.Button();
             this.TextbNombre = new System.Windows.Forms.TextBox();
             this.BtnRegresar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvData)).BeginInit();
+            this.btnExportar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.TextbEliminar = new System.Windows.Forms.TextBox();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNombres)).BeginInit();
             this.SuspendLayout();
             // 
-            // DgvData
+            // dgvNombres
             // 
-            this.DgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvData.Location = new System.Drawing.Point(32, 197);
-            this.DgvData.Name = "DgvData";
-            this.DgvData.Size = new System.Drawing.Size(275, 264);
-            this.DgvData.TabIndex = 0;
+            this.dgvNombres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvNombres.Location = new System.Drawing.Point(32, 197);
+            this.dgvNombres.Name = "dgvNombres";
+            this.dgvNombres.Size = new System.Drawing.Size(275, 264);
+            this.dgvNombres.TabIndex = 0;
             // 
             // label1
             // 
@@ -63,15 +65,7 @@
             this.BtnAgregar.TabIndex = 2;
             this.BtnAgregar.Text = "Agregar";
             this.BtnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // BtnOrdenar
-            // 
-            this.BtnOrdenar.Location = new System.Drawing.Point(232, 159);
-            this.BtnOrdenar.Name = "BtnOrdenar";
-            this.BtnOrdenar.Size = new System.Drawing.Size(75, 23);
-            this.BtnOrdenar.TabIndex = 3;
-            this.BtnOrdenar.Text = "Ordenar";
-            this.BtnOrdenar.UseVisualStyleBackColor = true;
+            this.BtnAgregar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // BtnMostrar
             // 
@@ -81,6 +75,7 @@
             this.BtnMostrar.TabIndex = 4;
             this.BtnMostrar.Text = "Mostrar";
             this.BtnMostrar.UseVisualStyleBackColor = true;
+            this.BtnMostrar.Click += new System.EventHandler(this.BtnMostrar_Click);
             // 
             // TextbNombre
             // 
@@ -99,21 +94,49 @@
             this.BtnRegresar.UseVisualStyleBackColor = true;
             this.BtnRegresar.Click += new System.EventHandler(this.BtnRegresar_Click);
             // 
+            // btnExportar
+            // 
+            this.btnExportar.Location = new System.Drawing.Point(284, 467);
+            this.btnExportar.Name = "btnExportar";
+            this.btnExportar.Size = new System.Drawing.Size(49, 23);
+            this.btnExportar.TabIndex = 7;
+            this.btnExportar.Text = "Exportar";
+            this.btnExportar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(232, 168);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(75, 23);
+            this.btnEliminar.TabIndex = 8;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // TextbEliminar
+            // 
+            this.TextbEliminar.Location = new System.Drawing.Point(216, 142);
+            this.TextbEliminar.Name = "TextbEliminar";
+            this.TextbEliminar.Size = new System.Drawing.Size(100, 20);
+            this.TextbEliminar.TabIndex = 9;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(345, 502);
+            this.Controls.Add(this.TextbEliminar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnExportar);
             this.Controls.Add(this.BtnRegresar);
             this.Controls.Add(this.TextbNombre);
             this.Controls.Add(this.BtnMostrar);
-            this.Controls.Add(this.BtnOrdenar);
             this.Controls.Add(this.BtnAgregar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.DgvData);
+            this.Controls.Add(this.dgvNombres);
             this.Name = "Inicio";
             this.Text = "Inicio";
-            ((System.ComponentModel.ISupportInitialize)(this.DgvData)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvNombres)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,12 +144,14 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView DgvData;
+        private System.Windows.Forms.DataGridView dgvNombres;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BtnAgregar;
-        private System.Windows.Forms.Button BtnOrdenar;
         private System.Windows.Forms.Button BtnMostrar;
         private System.Windows.Forms.TextBox TextbNombre;
         private System.Windows.Forms.Button BtnRegresar;
+        private System.Windows.Forms.Button btnExportar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox TextbEliminar;
     }
 }
