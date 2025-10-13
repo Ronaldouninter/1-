@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ClosedXML.Excel; // Agrega esta línea al inicio del archivo
-
+using ClosedXML.Excel; 
 namespace _1_
 {
     internal class Acciones
@@ -53,28 +52,30 @@ namespace _1_
                     }
                 }
 
-                public bool ExportarNombresAExcel(string rutaArchivo)
+        public bool ExportarNombresAExcel(string rutaArchivo)
+        {
+            try
+            {
+                using (var workbook = new XLWorkbook())
                 {
-                    try
-                    {
-                        using (var workbook = new XLWorkbook())
-                        {
-                            var worksheet = workbook.Worksheets.Add("Nombres");
-                            worksheet.Cell(1, 1).Value = "Nombre";
+                    var worksheet = workbook.Worksheets.Add("Nombres");
+                    worksheet.Cell(1, 1).Value = "Nombres";
 
-                            for (int i = 0; i < Nombres.Count; i++)
-                            {
-                                worksheet.Cell(i + 2, 1).Value = Nombres[i];
-                            }
-
-                            workbook.SaveAs(rutaArchivo);
-                        }
-                        return true;
-                    }
-                    catch (Exception)
+                    for (int i = 0; i < Nombres.Count; i++)
                     {
-                        return false;
+                        worksheet.Cell(i + 2, 1).Value = Nombres[i];
                     }
+
+                    worksheet.Column(1).AdjustToContents();
+                    workbook.SaveAs(rutaArchivo);
                 }
-}
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
     }
+}
+    
